@@ -1,0 +1,11 @@
+input:active, input:focus, label:hover {
+    outline: red;
+    border: red;
+    box-shadow: red;
+    background-color: rgb(56, 219, 56);
+}
+
+svg{
+    color: rgba(35, 122, 79, 0.911);
+}
+

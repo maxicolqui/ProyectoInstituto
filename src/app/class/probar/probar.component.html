@@ -1,0 +1,31 @@
+
+
+<div class="container my-5">
+    <button class="btn btn-outline-secondary" (click)="mostrarFiltro()">FILTRAR</button>
+</div>
+
+<div class="container" *ngIf="filtro">
+    <div>
+        <h3>Tipo de curso</h3>
+        <span *ngFor="let a of listaCurso">
+            <input type="checkbox" class="btn-check" id="btncheck{{a}}">
+            <label class="btn btn-outline-secondary mx-2" for="btncheck{{a}}">{{a}}</label>
+        </span>
+    </div>
+    <div>
+        <h3>Nivel</h3>
+        <span *ngFor="let a of listaNivel">
+            <input type="checkbox" class="btn-check" id="btncheck{{a}}">
+            <label class="btn btn-outline-secondary mx-2" for="btncheck{{a}}">{{a}}</label>
+        </span>
+    </div>
+    <div>
+        <h3>Pago</h3>
+        <span *ngFor="let a of listaPago">
+            <input type="checkbox" class="btn-check" id="btncheck{{a}}">
+            <label class="btn btn-outline-secondary mx-2" for="btncheck{{a}}">{{a}}</label>
+        </span>
+    </div>
+
+    
+</div>
