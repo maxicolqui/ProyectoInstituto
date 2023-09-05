@@ -1,0 +1,55 @@
+
+<body class="bg-info d-flex justify-content-center align-items-center vh-100">
+    <!-- 
+        [formGroup]="forma"
+     -->
+    <form (ngSubmit)="guardar()">
+        <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem">
+            
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-key-fill text-white" viewBox="0 0 16 16">
+                        <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                      </svg>
+                </div>
+                <input class="form-control bg-light" 
+                type="password" 
+                formControlName="password1"
+                placeholder="Ingrese nueva Contraseña" 
+                [class.is-invalid] = "password1NoValido"/>
+               
+                <small  *ngIf="password1NoValido"class="text-danger">Ingrese una contraseña con el minimo de 6 caracteres</small>
+            </div>
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-success">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-key-fill text-white" viewBox="0 0 16 16">
+            <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
+                </div>
+                <input class="form-control bg-light" 
+                type="password" 
+                formControlName="password2"
+                placeholder="Confirmar Contraseña" 
+                [class.is-invalid] = "password2NoValido"/>
+                
+
+
+            </div>
+            <small *ngIf="password2NoValido" class="text-danger">Las contraseñas no coinciden</small>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">&nbsp;</label>
+                <div class="input-group col-md-8">
+                    <button type="submit" class="btn btn-success mr-2">
+                        Guardar
+                    </button>
+                    <button type="submit" class="btn btn-danger">
+                        Volver
+                    </button>
+                </div>
+            </div>
+           
+        </div>
+
+    </form>
+   
+</body>

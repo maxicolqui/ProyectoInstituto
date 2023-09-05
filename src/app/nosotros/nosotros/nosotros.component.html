@@ -1,0 +1,51 @@
+<section class="bg-info d-flex justify-content-center align-items-center vh-100">
+    <form (ngSubmit)="guardar()">
+        <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem">
+            
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-success">
+                    <img src="../../../assets/images/iniciar_secion/password-icon.svg" alt="password-icon"
+                        style="height: 1rem" />
+                </div>
+                <input class="form-control bg-light" 
+                type="password" 
+                formControlName="password1"
+                placeholder="Ingrese nueva Contraseña" 
+                [class.is-invalid] = "password1NoValido"/>
+               
+                <small  *ngIf="password1NoValido"class="text-danger">Ingrese una contraseña con el minimo de 6 caracteres</small>
+            </div>
+            <div class="input-group mt-1">
+                <div class="input-group-text bg-success">
+                    <img src="../../../assets/images/iniciar_secion/password-icon.svg" alt="password-icon"
+                        style="height: 1rem" />
+                </div>
+                <input class="form-control bg-light" 
+                type="password" 
+                formControlName="password2"
+                placeholder="Confirmar Contraseña" 
+                [class.is-invalid] = "password2NoValido"/>
+                
+
+
+            </div>
+            <small *ngIf="password2NoValido" class="text-danger">Las contraseñas no coinciden</small>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">&nbsp;</label>
+                <div class="input-group col-md-8">
+                    <button type="submit" class="btn btn-success mr-2">
+                        Guardar
+                    </button>
+                    <button type="submit" class="btn btn-danger">
+                        Volver
+                    </button>
+                </div>
+            </div>
+           
+        </div>
+
+    </form>
+   
+
+
+</section>

@@ -1,0 +1,50 @@
+*{
+    justify-content: center;
+    
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(#2b4731, hsl(144, 7%, 40%));
+}
+.libro {
+    text-align: center;
+}
+.container {
+    border: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+table {
+    justify-content: center;
+    color: #1b1b1b;
+    font-size: 14px;
+    table-layout:auto;
+    border-collapse: collapse;
+}
+
+thead {
+    background: rgba(10, 165, 70, 0.4);
+}
+
+th {
+    padding: 20px 15px ;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+
+tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background: rgba(8, 143, 41, 0.4);
+}
