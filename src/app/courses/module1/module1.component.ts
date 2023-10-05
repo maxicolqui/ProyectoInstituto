@@ -18,7 +18,7 @@ export class Module1Component implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(listaMember1)
+    console.log()
   }
 
 }
