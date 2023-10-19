@@ -8,6 +8,7 @@ import { SoftwareModule } from './software/software.module';
 import { TurnoModule } from './turno/turno.module';
 import { ClassModule } from './class/class.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CoursesModule } from './courses/courses.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SoftwareModule,
     TurnoModule,
     ClassModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoursesModule
   
   ],
   providers: [],
