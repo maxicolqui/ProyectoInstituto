@@ -14,6 +14,7 @@ export class InicioComponent implements OnInit {
   password:string = '';
   error:boolean = false;
   listaProfesor: Profesor[]=[]
+  
 
   constructor(private profesorService: ProfesorService , private router:Router) {
 
@@ -24,19 +25,20 @@ export class InicioComponent implements OnInit {
       console.log("lista de Profesores:",response);
       this.listaProfesor= response;
       console.log("lista de profesores del ts: ",this.listaProfesor);
-
+      const list=this.listaProfesor[0]
+      console.log()
     })
   }
 
+  // metodo de validacion en la parte para el inicio de de sesion
   validate():void {
-    
-    console.log(this.user);
-    if (this.user=== "name") {
-      this.router.navigate(['pagina']);
-
-    } else {
-      this.error=true;
-    }
+    for(const e of this.listaProfesor){
+      if (this.user=== e.dni) {
+        this.router.navigate(['pagina']);
+      } else {
+        this.error=true;
+      }
+    }    
   }
 
   
