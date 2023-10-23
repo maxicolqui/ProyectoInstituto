@@ -1,4 +1,4 @@
-import { Turno } from "../models/Turno";
+import { Turno } from "../model/Turno";
 
 export const turnoTarde: Turno[]=[
     {id:8, hora:'13:20 - 14:00'},

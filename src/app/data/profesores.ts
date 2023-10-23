@@ -1,4 +1,4 @@
-import { Profesor } from "../models/Profesor";
+import { Profesor } from "../model/Profesor";
 
 export const listaProfesor: Profesor[] = [
     {id: 1, nomApe: 'Elio Huanca', email:'elihuanca@gmail.com', telefono:'12345678', dni:'11111111'},

@@ -1,4 +1,5 @@
-export class Materia{
-    mat_id:number;
-    mat_nom:string;
+export class Materia {
+    id:number;
+    nombre:string;
+    carrera:string;
 }

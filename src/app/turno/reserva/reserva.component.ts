@@ -3,8 +3,8 @@ import { turnoDia } from 'src/app/data/dia';
 import { turnoNoche } from 'src/app/data/noche';
 import { listaHoy } from 'src/app/data/reservaTurno';
 import { turnoTarde } from 'src/app/data/tarde';
-import { Filtrado } from 'src/app/models/Filtrado';
-import { Turno } from 'src/app/models/Turno';
+import { Filtrado } from 'src/app/model/Filtrado';
+import { Turno } from 'src/app/model/Turno';
 
 @Component({
   selector: 'app-reserva',

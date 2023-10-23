@@ -1,4 +1,4 @@
-import { Filtrado } from "../models/Filtrado";
+import { Filtrado } from "../model/Filtrado";
 
 export const listaHoy: Filtrado[] = [
     {id:1, reserva:'08:00 - 08:40', nomApe:'Elio huanca', materia:'Practia I', carrera:'Desarrollode software'},

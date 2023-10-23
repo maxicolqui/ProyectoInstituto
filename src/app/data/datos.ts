@@ -1,4 +1,4 @@
-import { Member } from "../models/member";
+import { Member } from "../model/member";
 
 export const listaMember: Member [] = [
     {id:1, nombre: "MAXIMILIANO", imagen: "1_maxi.png", nombreYap: "Arturo Maximiliano Colqui", tel: "3885136144 ",  mail:"maximilianocolqui@gmail.com", git: "https://gitlab.com/amcolquii", linkedin: "https://www.linkedin.com/in/arturo-maximiliano-colqui-85374623a/"} ,

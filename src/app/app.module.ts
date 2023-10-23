@@ -9,6 +9,7 @@ import { TurnoModule } from './turno/turno.module';
 import { ClassModule } from './class/class.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoursesModule } from './courses/courses.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CoursesModule } from './courses/courses.module';
     TurnoModule,
     ClassModule,
     ReactiveFormsModule,
-    CoursesModule
+    CoursesModule,
+    HttpClientModule
   
   ],
   providers: [],

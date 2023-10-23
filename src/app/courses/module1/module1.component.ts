@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { listaMember } from 'src/app/data/datos';
-import { Member } from 'src/app/models/member';
+import { Member } from 'src/app/model/member';
 
 @Component({
   selector: 'app-module1',
