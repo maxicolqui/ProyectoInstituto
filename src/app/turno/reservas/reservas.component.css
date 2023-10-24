@@ -1,0 +1,9 @@
+button{
+    margin: 30px;
+}
+
+@media(max-width:575px){
+    button{
+        margin: 3px;
+    }
+}

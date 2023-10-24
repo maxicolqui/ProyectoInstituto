@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReservaComponent } from './reserva/reserva.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ClassModule } from '../class/class.module';
+import { ReservasComponent } from './reservas/reservas.component';
+import { CrearComponent } from './crear/crear.component';
+import { ViewComponent } from './view/view.component';
+import { UpdateComponent } from './update/update.component';
 
 
 
 @NgModule({
   declarations: [
-    ReservaComponent,
+    ReservasComponent,
+    CrearComponent,
+    ViewComponent,
+    UpdateComponent,
   ],
   imports: [
     CommonModule,
@@ -17,7 +23,7 @@ import { ClassModule } from '../class/class.module';
     
   ],
   exports: [
-    ReservaComponent
+    ViewComponent
   ]
 })
 export class TurnoModule { }

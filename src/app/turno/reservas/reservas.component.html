@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <h1 class="text-center fw-light fs-3 mt-4 text-decoration-underline ">Formulario de Registro de Uso Informatico</h1>
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-success" (click)="mostrarFormulario()">Reservar</button>
+        </div>        
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-success" (click)="mostrarReserva()">Visualizar</button>
+        </div>
+        <div class="col-sm-4">
+            <button type="button" class="btn btn-success" (click)="mostrarEliminar()">Editar</button>
+        </div>
+    </div>
+
+    <div *ngIf="habilitarForm==true">
+        <app-crear ></app-crear>
+    </div>
+
+    <div *ngIf="habilitarReserva==true">
+        <app-view></app-view>
+    </div>
+
+    <div *ngIf="habilitarEliminar==true">
+        <app-update></app-update>
+    </div>
+
+</div>

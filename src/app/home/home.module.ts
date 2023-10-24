@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ErrorComponent } from './error/error.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { UbicacionComponent } from './ubicacion/ubicacion.component';
+import { TurnoModule } from '../turno/turno.module';
 
 
 
@@ -19,11 +20,13 @@ import { UbicacionComponent } from './ubicacion/ubicacion.component';
     ModuloComponent,
     FooterComponent,
     ErrorComponent,
-    UbicacionComponent
+    UbicacionComponent,
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
+    TurnoModule
+  
     
   ],
   exports:[
