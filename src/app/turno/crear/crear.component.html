@@ -4,7 +4,7 @@
             <div class="mb-3">
                 <h3 class="fs-6 ms-2 fw-semibold">Materia</h3>
                 <select class="form-select" aria-label="Default select example">
-                    <option selected>Nombre de la Materia</option>
+                    <option selected *ngFor="let e of ListaMateria">{{e.nombre}}</option>
                   </select>
             </div>
             <div class="mb-3">

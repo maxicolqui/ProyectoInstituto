@@ -3,5 +3,5 @@ export class Profesor{
     nomApe:string;
     email:string;
     telefono:string;
-    dni:string;
+    dni:number;
 };

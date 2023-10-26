@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:"home",component:HomeComponent},
   {path:"software",component:SoftComponent},
   {path:"logeo",component:InicioComponent},
-  {path:"pagina",component:ReservasComponent},
+  {path:"pagina/:e.dni",component:ReservasComponent},
   {path:"Contacto",component:Module1Component},
   {path:"recuperacion",component:NosotrosComponent},
   {path:"**",component:ErrorComponent}

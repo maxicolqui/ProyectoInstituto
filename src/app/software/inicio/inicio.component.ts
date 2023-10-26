@@ -34,11 +34,12 @@ export class InicioComponent implements OnInit {
   validate():void {
     for(const e of this.listaProfesor){
       if (this.user=== e.dni) {
-        this.router.navigate(['pagina']);
+        this.router.navigate(['pagina',e.dni]);
       } else {
         this.error=true;
       }
-    }    
+    }   
+    
   }
 
   
