@@ -13,12 +13,14 @@ import { ProfesorService } from 'src/app/services/profesor.service';
 export class CrearComponent implements OnInit {
 
   ListaMateria: Materia[]=[]
-  listaProfesor: Profesor[]=[]
+  listaProfe: any[]=[]
   idCourseEnd:number;
-  cEnd:Profesor;
+  cEnd:any[]=[]
   courseListSecondary=[]
   idC:number;
   buscado1=[]
+  amd:any[]=[]
+  
 
 
   constructor(private materiaService: ProfesorService, private activateRouter:ActivatedRoute ){
@@ -28,33 +30,32 @@ export class CrearComponent implements OnInit {
   ngOnInit(): void {
     this.materiaService.viewAll().subscribe(response =>{
       console.log("lista de las materias:",response);
-      this.listaProfesor= response;
-      console.log("lista de las materias del TS:",this.listaProfesor);
-      console.log(this.listaProfesor)
+      this.listaProfe= response;
+      console.log("lista de las materias del TS:",this.listaProfe);
+      console.log(this.listaProfe)
     })
 
     this.activateRouter.paramMap.subscribe(param => {
     this.idCourseEnd =+ param.get('e.dni');
-      console.log(this.idCourseEnd);
-    let valorEnd=String(this.idCourseEnd)
-    console.log(valorEnd)
-    let end = this.listaProfesor.find(p => p.id === 1);
-    console.log("lista filtrada:",end)
+    console.log(this.idCourseEnd);
+    let amc = this.listaProfe.find(p => p.dni === 39200);
+    console.log("lista filtrada:",amc)
   
   })
-
-    this.buscarxid();
     
   }
 
-  buscarxid():void{
-    this.activateRouter.paramMap.subscribe(param =>{
-      this.idC =+ param.get('e.dni');
-      console.log(this.idC)
-      let valorF=String(this.idC)
-      this.buscado1.push(this.listaProfesor.find(e => e.id===1))
-      console.log("ultimo intento:",this.buscado1)
-    })
+  lis:any[]=[]
+  conseguirFor():void{
+    for(const e of this.listaProfe){
+      if (e.dni==this.idCourseEnd) {
+        let lis= this.listaProfe.find(p => p.dni === this.idCourseEnd);
+        console.log("lista filtrada:",lis)
+        console.log("se encontro el dni")
+      }else{
+        console.log("no se encontro")
+      }
+    }
   }
 
 }

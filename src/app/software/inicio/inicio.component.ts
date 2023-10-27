@@ -14,7 +14,7 @@ export class InicioComponent implements OnInit {
   password:string = '';
   error:boolean = false;
   listaProfesor: Profesor[]=[]
-  
+  contra:string
 
   constructor(private profesorService: ProfesorService , private router:Router) {
 
@@ -33,7 +33,8 @@ export class InicioComponent implements OnInit {
   // metodo de validacion en la parte para el inicio de de sesion
   validate():void {
     for(const e of this.listaProfesor){
-      if (this.user=== e.dni) {
+      this.contra = String(e.dni)
+      if (this.user=== this.contra) {
         this.router.navigate(['pagina',e.dni]);
       } else {
         this.error=true;
