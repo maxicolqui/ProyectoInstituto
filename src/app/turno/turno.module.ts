@@ -6,6 +6,7 @@ import { ReservasComponent } from './reservas/reservas.component';
 import { CrearComponent } from './crear/crear.component';
 import { ViewComponent } from './view/view.component';
 import { UpdateComponent } from './update/update.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { UpdateComponent } from './update/update.component';
   imports: [
     CommonModule,
     AppRoutingModule,
-    ClassModule
+    ClassModule,
+    FormsModule
     
   ],
   exports: [

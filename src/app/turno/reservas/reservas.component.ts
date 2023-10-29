@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Materia } from 'src/app/models/Materia';
+import { turnoDia, turnoNoche, turnoTarde } from 'src/app/data/dia';
+import { Turno } from 'src/app/model/Turno';
 import { Profesor } from 'src/app/models/Profesor';
 import { ProfesorService } from 'src/app/services/profesor.service';
 
@@ -14,6 +15,14 @@ export class ReservasComponent implements OnInit {
   habilitarForm: boolean = false;
   habilitarReserva: boolean = false;
   habilitarEliminar: boolean = false;
+
+  //Variables del formulario
+  dia: boolean = false;
+  tarde: boolean = false;
+  noche: boolean = false;
+  turnosDia: Turno[] = turnoDia;
+  turnosTarde: Turno[] = turnoTarde;
+  turnosNoche: Turno[] = turnoNoche;
 
   // Variables del service
   listaProfe: any[] = []
@@ -38,6 +47,7 @@ export class ReservasComponent implements OnInit {
     })
   }
 
+  // Metodos del formulario
   lis: Profesor;
   mostrarFormulario(): void {
     this.lis = this.listaProfe.find(p => p.dni === this.idCourseEnd);
@@ -52,4 +62,23 @@ export class ReservasComponent implements OnInit {
   mostrarEliminar(): void {
     this.habilitarEliminar = true;
   }
+
+  // Cambiar los turnos
+  verDia(): void {
+    this.dia = true;
+    this.tarde = false;
+    this.noche = false;
+  }
+
+  verTarde(): void {
+    this.dia = false;
+    this.tarde = true;
+    this.noche = false;
+  }
+
+  verNoche(): void {
+    this.dia = false;
+    this.tarde = false;
+    this.noche = true;
+  } 
 }
