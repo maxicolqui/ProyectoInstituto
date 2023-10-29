@@ -55,6 +55,10 @@ export class ReservasComponent implements OnInit {
     this.habilitarForm = true;
   }
 
+  ocultarFormulario(): void {
+    this.habilitarForm = false;
+  }
+
   mostrarReserva(): void {
     this.habilitarReserva = true;
   }

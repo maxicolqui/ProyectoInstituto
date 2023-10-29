@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <div *ngIf="habilitarForm==true">
+    <div *ngIf="habilitarForm">
         <div class="container">
             <div class="row d-flex justify-content-center ">
                 <div class="col-6 bolder bolder-2 shadow rounded-3 p-2 ">
@@ -60,7 +60,7 @@
                     </div>
                     
                     <button class="btn btn-primary me-2">Guardar</button>
-                    <button class="btn btn-danger" >Cancelar</button>
+                    <button class="btn btn-danger" (click)="ocultarFormulario()" >Cancelar</button>
                 </div>
             </div>
         </div>
