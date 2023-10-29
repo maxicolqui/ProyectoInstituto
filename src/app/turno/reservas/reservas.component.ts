@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Materia } from 'src/app/models/Materia';
+import { Profesor } from 'src/app/models/Profesor';
 import { ProfesorService } from 'src/app/services/profesor.service';
 
 @Component({
@@ -8,23 +10,22 @@ import { ProfesorService } from 'src/app/services/profesor.service';
   styleUrls: ['./reservas.component.css']
 })
 export class ReservasComponent implements OnInit {
-
+  // Variables del componente
   habilitarForm: boolean = false;
   habilitarReserva: boolean = false;
   habilitarEliminar: boolean = false;
+
+  // Variables del service
   listaProfe: any[] = []
-  idCourseEnd: number;
+  idCourseEnd: string;
   cEnd: any[] = []
   courseListSecondary = []
   idC: number;
   buscado1 = []
 
-
-
   constructor(private profeService: ProfesorService, private activateRouter: ActivatedRoute) {
 
   }
-
 
   ngOnInit(): void {
     this.profeService.viewAll().subscribe(response => {
@@ -33,19 +34,17 @@ export class ReservasComponent implements OnInit {
     })
 
     this.activateRouter.paramMap.subscribe(param => {
-      this.idCourseEnd = + param.get('e.dni');
+      this.idCourseEnd = String(+ param.get('e.dni'));  
     })
-
-
   }
-  lis: any[] = []
+
+  lis: Profesor;
   mostrarFormulario(): void {
-    let lis = this.listaProfe.find(p => p.dni === this.idCourseEnd);
-    console.log("lista filtrada:",lis)
+    this.lis = this.listaProfe.find(p => p.dni === this.idCourseEnd);
+    //console.log("lista del form:", this.lis)
     this.habilitarForm = true;
- 
-
   }
+
   mostrarReserva(): void {
     this.habilitarReserva = true;
   }
@@ -53,5 +52,4 @@ export class ReservasComponent implements OnInit {
   mostrarEliminar(): void {
     this.habilitarEliminar = true;
   }
-
 }
