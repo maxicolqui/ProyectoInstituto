@@ -40,6 +40,7 @@ export class CrearComponent implements OnInit {
     console.log(this.idCourseEnd);
     let amc = this.listaProfe.find(p => p.dni === 39200);
     console.log("lista filtrada:",amc)
+
   
   })
     
