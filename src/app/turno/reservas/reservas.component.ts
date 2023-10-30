@@ -51,7 +51,7 @@ export class ReservasComponent implements OnInit {
   lis: Profesor;
   mostrarFormulario(): void {
     this.lis = this.listaProfe.find(p => p.dni === this.idCourseEnd);
-    //console.log("lista del form:", this.lis)
+    console.log("lista del form:", this.lis)
     this.habilitarForm = true;
   }
 
