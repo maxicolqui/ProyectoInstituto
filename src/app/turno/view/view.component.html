@@ -1,24 +1,24 @@
 <div class="container">
-    <div class="row">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Turno</th>
-                <th scope="col">Horario</th>
-                <th scope="col">Materia</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Huanca</td>
-                <td>Tarde</td>
-                <td>14:00</td>
-                <td>Practica III</td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr class="text-cente ">
+          <th scope="col">Nombre - Apellido</th>
+          <th scope="col">Turno</th>
+          <th scope="col">Horario</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Materia</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="text-cente " *ngFor="let e of listaReserva">
+          <td>{{e.profesor.nombre}} - {{e.profesor.apellido}}</td>
+          <td>{{e.turno}}</td>
+          <td>{{e.hora}}</td>
+          <td>{{e.fecha}}</td>
+          <td>{{e.materia.nombre}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

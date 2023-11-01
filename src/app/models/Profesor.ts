@@ -9,5 +9,4 @@ export class Profesor{
     telefono:string;
     dni:string;
     materia:Materia;
-    reserva:Reserva;
 };
