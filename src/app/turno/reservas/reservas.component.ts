@@ -31,6 +31,7 @@ export class ReservasComponent implements OnInit {
   // Variables del service
   listaReserva: Reserva[] = [];
   listaMateria: Materia[] = [];
+  listaProfesor: Profesor[] = []
   idCourseEnd: string;
   cEnd: any[] = []
   courseListSecondary = []
@@ -38,12 +39,13 @@ export class ReservasComponent implements OnInit {
   buscado1 = []
 
   // Variavles para guardar turno
-  fecha: string;
+  turno: string;
   materia: Materia;
   idMateria: number;
-  idHorario: number;
+  hora: string;
+  diaReserva: string;
 
-  constructor(private reservaService: ReservaService, private materiaService: MateriaService, private activateRouter: ActivatedRoute) {
+  constructor(private reservaService: ReservaService, private materiaService: MateriaService, private profesorService: ProfesorService , private activateRouter: ActivatedRoute) {
 
   }
 
@@ -59,6 +61,10 @@ export class ReservasComponent implements OnInit {
       //console.log("materias", this.listaMateria)
     })
 
+    this.profesorService.viewAll().subscribe(resp => {
+      this.listaProfesor = resp;
+      //console.log("materias", this.listaMateria)
+    })
 
     this.activateRouter.paramMap.subscribe(param => {
       this.idCourseEnd = String(+ param.get('e.dni'))
@@ -99,7 +105,7 @@ export class ReservasComponent implements OnInit {
   // Cambiar los turnos
   verDia(): void {
     this.dia = true;
-    this.fecha = 'mañana';
+    this.turno = 'mañana';
     this.tarde = false;
     this.noche = false;
   }
@@ -107,7 +113,7 @@ export class ReservasComponent implements OnInit {
   verTarde(): void {
     this.dia = false;
     this.tarde = true;
-    this.fecha = 'tarde';
+    this.turno = 'tarde';
     this.noche = false;
   }
 
@@ -115,33 +121,41 @@ export class ReservasComponent implements OnInit {
     this.dia = false;
     this.tarde = false;
     this.noche = true;
-    this.fecha = 'noche';
+    this.turno = 'noche';
   }
 
   // Metodos de guardado
   materiaElegida: Materia;
   horario: Turno;
+  profeElegido:Profesor;
+  reservaCreada: Reserva;
   guardar(): void {
-    if (this.idHorario >= 0 && this.idHorario <= 7) {
-      this.horario = this.turnosDia.find(e => e.id == this.idHorario);
-      console.log("horario", this.horario)
-    } else {
-      if (this.idHorario > 7 && this.idHorario < 16) {
-        this.horario = this.turnosTarde.find(e => e.id == this.idHorario);
-        console.log("horario", this.horario)
-      } else {
-        if (this.idHorario > 15 && this.idHorario < 22) {
-          this.horario = this.turnosNoche.find(e => e.id == this.idHorario);
-          console.log("horario", this.horario)
-        }
-      }
+    this.reservaCreada = {
+      id: null,
+      fecha: this.diaReserva,
+      hora: this.hora,
+      turno: this.turno,
+      profesor: this.listaProfesor.find(p => p.dni == this.idCourseEnd),
+      materia: this.listaMateria.find(p => p.id == this.idMateria)
     }
-
+    console.log("datos de reserva")
+    this.profeElegido =this.listaProfesor.find(p => p.dni == this.idCourseEnd);
+    console.log(this.profeElegido);
+    console.log(this.hora)
+    console.log(this.diaReserva)
     this.materiaElegida = this.listaMateria.find(p => p.id == this.idMateria);
-    console.log(this.fecha)
+    console.log(this.materiaElegida);
+    console.log(this.turno)
     //console.log(this.listaMateria);
     //console.log(this.idMateria)
-    console.log(this.materiaElegida);
     this.habilitarForm = false;
+
+    this.crearReserva(this.reservaCreada);
+  }
+
+  crearReserva(reserva: Reserva): void {
+    this.reservaService.create(reserva).subscribe(resp => {
+      console.log(reserva)
+    });
   }
 }

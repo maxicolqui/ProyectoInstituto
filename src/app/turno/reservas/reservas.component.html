@@ -24,6 +24,10 @@
                           </select>
                     </div>
                     <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Ingrese fecha</label>
+                        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" [(ngModel)]="diaReserva">
+                      </div>
+                    <div class="mb-3">
                         <div class="turno">
                             <h3 class="fs-6 fw-semibold">Seleccione turno</h3>
                             <div class="form-check">
@@ -45,17 +49,17 @@
                     </div>
                     <div class="mb-3">
                         <h3 class="fs-6 ms-2 fw-semibold">Horario</h3>
-                        <select *ngIf="dia" class="form-select" aria-label="Default select example" [(ngModel)]="idHorario" >
+                        <select *ngIf="dia" class="form-select" aria-label="Default select example" [(ngModel)]="hora" >
                             <option value="" selected disabled>Seleccione una opcion</option>
-                            <option [value]="d.id" *ngFor="let d of turnosDia" [value]="d.id" >{{d.hora}}</option>
+                            <option [value]="d.id" *ngFor="let d of turnosDia" [value]="d.hora" >{{d.hora}}</option>
                         </select>
-                        <select *ngIf="tarde" class="form-select" aria-label="Default select example" [(ngModel)]="idHorario">
+                        <select *ngIf="tarde" class="form-select" aria-label="Default select example" [(ngModel)]="hora">
                             <option value="" selected disabled>Seleccione una opcion</option>
-                            <option [value]="t.id" *ngFor="let t of turnosTarde" [value]="t.id">{{t.hora}}</option>
+                            <option [value]="t.id" *ngFor="let t of turnosTarde" [value]="t.hora">{{t.hora}}</option>
                         </select>
-                        <select *ngIf="noche" class="form-select" aria-label="Default select example" [(ngModel)]="idHorario">
+                        <select *ngIf="noche" class="form-select" aria-label="Default select example" [(ngModel)]="hora">
                             <option value="" selected disabled>Seleccione una opcion</option>
-                            <option [value]="n.id" *ngFor="let n of turnosNoche" [value]="n.id">{{n.hora}}</option>
+                            <option [value]="n.id" *ngFor="let n of turnosNoche" [value]="n.hora">{{n.hora}}</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary me-2" (click)="guardar()">Guardar</button>
