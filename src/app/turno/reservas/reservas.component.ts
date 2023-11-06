@@ -27,6 +27,7 @@ export class ReservasComponent implements OnInit {
   turnosDia: Turno[] = turnoDia;
   turnosTarde: Turno[] = turnoTarde;
   turnosNoche: Turno[] = turnoNoche;
+  enCrear: boolean = true;
 
   // Variables del service
   listaReserva: Reserva[] = [];
@@ -50,10 +51,17 @@ export class ReservasComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
+
     this.reservaService.viewAll().subscribe(resp => {
       this.listaReserva = resp;
       //console.log(this.listaReserva)
-
+      this.lis = this.listaReserva.find(p => p.profesor.dni === this.idCourseEnd);
+      console.log("lista del form:", this.lis)
+      console.log(this.idCourseEnd)
+      this.lista = this.lis.profesor['listMateria'];
+      console.log(this.lista[0].nombre)
+      this.habilitarForm = true;
     })
 
     this.materiaService.viewAll().subscribe(resp => {
@@ -69,18 +77,32 @@ export class ReservasComponent implements OnInit {
     this.activateRouter.paramMap.subscribe(param => {
       this.idCourseEnd = String(+ param.get('e.dni'))
     })
+
+    this.reservaService.viewAll().subscribe(response => {
+      this.listaReserva = response;
+      console.log("lista hfjkdsa:", this.listaReserva);
+      for (const e of this.listaReserva) {
+        if(e.profesor.dni == this.idCourseEnd) {
+          this.reservas.push(e);
+        }
+      }
+      console.log(this.reservas)
+      //this.lis = this.listaReserva.find(p => p.profesor.dni === this.idCourseEnd);
+      //console.log("solo reserva", this.lis)
+    })
+
+    
   }
 
   // Metodos del formulario
   lis: Reserva;
   lista: Materia[] = [];
   mostrarFormulario(): void {
-    this.lis = this.listaReserva.find(p => p.profesor.dni === this.idCourseEnd);
-    console.log("lista del form:", this.lis)
-    console.log(this.idCourseEnd)
-    this.lista = this.lis.profesor['listMateria'];
-    console.log(this.lista[0].nombre)
     this.habilitarForm = true;
+    this.habilitarReserva = false;
+    this.habilitarEliminar = false;
+
+    this.enCrear = true;
   }
 
   ocultarFormulario(): void {
@@ -89,7 +111,8 @@ export class ReservasComponent implements OnInit {
 
   mostrarReserva(): void {
     this.habilitarReserva = true;
-
+    this.habilitarForm = false;
+    this.habilitarEliminar = false;
   }
   cerrar():void{
     this.habilitarReserva = false;
@@ -100,6 +123,16 @@ export class ReservasComponent implements OnInit {
 
   mostrarEliminar(): void {
     this.habilitarEliminar = true;
+    this.habilitarForm = false;
+    this.habilitarReserva = false;
+    
+  }
+
+  idModificar: number;
+  editar(id: number): void {
+    this.habilitarForm = true;
+    this.enCrear = false;
+    this.idModificar = id;
   }
 
   // Cambiar los turnos
@@ -124,7 +157,7 @@ export class ReservasComponent implements OnInit {
     this.turno = 'noche';
   }
 
-  // Metodos de guardado
+  // Metodos de services
   materiaElegida: Materia;
   horario: Turno;
   profeElegido:Profesor;
@@ -157,5 +190,31 @@ export class ReservasComponent implements OnInit {
     this.reservaService.create(reserva).subscribe(resp => {
       console.log(reserva)
     });
+  }
+
+  // parte del update
+  reservas:Reserva[] = [];
+  ocultar: boolean = true;
+
+  
+  eliminar(id: number): void {
+    this.reservaService.delete(id).subscribe(Response => {
+
+    })
+    
+  }
+
+  modificar(): void {
+    this.reservaCreada = {
+      id: this.idModificar,
+      fecha: this.diaReserva,
+      hora: this.hora,
+      turno: this.turno,
+      profesor: this.listaProfesor.find(p => p.dni == this.idCourseEnd),
+      materia: this.listaMateria.find(p => p.id == this.idMateria)
+    }
+    this.reservaService.update(this.reservaCreada).subscribe(resp => {
+      console.log(resp);
+    })
   }
 }
