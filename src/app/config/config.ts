@@ -1,1 +1,1 @@
-export const URL_ENDPOINT= 'http://localhost:8080/api';
+export const URL_ENDPOINT= 'http://localhost:8084/api';
