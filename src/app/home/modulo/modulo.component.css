@@ -6,7 +6,7 @@ a {
     cursor: pointer;
     width: 80px;
     height: 40px;
-    background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+    background-image: linear-gradient(to top, #D8D9DB 0%, #ffffff6c 80%, #fdfdfd71 70%,1);
     border-radius: 30px;
     border: 1px solid #8F9092;
     transition: all 0.2s ease;
@@ -16,6 +16,7 @@ a {
     color: #606060;
     text-shadow: 0 1px #fff;
     text-decoration: none;
+    
   }
   
   a:hover {
