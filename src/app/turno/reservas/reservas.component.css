@@ -1,9 +1,13 @@
-button{
-    margin: 30px;
-}
+
 
 @media(max-width:575px){
     button{
         margin: 3px;
+    }
+}
+
+@media(max-width:800px){
+    .container{
+        overflow-x: scroll;
     }
 }

@@ -44,40 +44,10 @@ export class UpdateComponent implements OnInit {
     this.reservaService.delete(id).subscribe(Response => {
 
     })
-    this.verTodo()
-    this.ocultar = false;
-
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success',
-        
-
-        )
-        this.ocultar = true;
-      }
-    })
-
     
-    
-
   }
   
-  verTodo(): void {
-      
-      //this.lis = this.listaReserva.find(p => p.profesor.dni === this.idCourseEnd);
-      //console.log("solo reserva", this.lis)
-  }
+
  
   
 }
