@@ -21,13 +21,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="text-cente " *ngFor="let e of listaService">
-          <td>{{ e.hora }}</td>
-          <td>{{ e.profesor.nombre }}</td>
-          <td>{{ e.materia.nombre }}</td>
-        </tr>
+        <ng-container *ngIf="listaService.length != 0; else not">
+          <tr class="text-cente " *ngFor="let e of listaService">
+            <td>{{ e.hora }}</td>
+            <td>{{ e.profesor.nombre }}</td>
+            <td>{{ e.materia.nombre }}</td>
+          </tr>
+        </ng-container>
+        <ng-template #not>
+          <p>No hay turnos reservaos hasta el momento</p>
+        </ng-template>
       </tbody>
     </table>
   </div>
 </div>
-<button (click)="rese()">g</button>

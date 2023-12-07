@@ -19,16 +19,6 @@ export class ViewComponent implements OnInit {
   fecha: string = this.pipe.transform(Date.now(), "YYYY-MM-dd");
   turno: string = 'tarde';
 
-  // listaService: Reserva[] = [
-  //   {id: 5, fecha:'2023-12-03', turno:'dia', hora:'10:40', materia: null, profesor: null},
-  //   {id: 6, fecha:'2023-12-03', turno:'dia', hora:'11:20', materia: null, profesor: null},
-  //   {id: 7, fecha:'2023-12-04', turno:'dia', hora:'12:00', materia: null, profesor: null},
-  //   {id: 8, fecha:'2023-12-05', turno:'dia', hora:'12:40', materia: null, profesor: null},
-  //   {id: 9, fecha:'2023-12-04', turno:'tarde', hora:'13:20', materia: null, profesor: null},
-  //   {id: 10, fecha:'2023-12-03', turno:'tarde', hora:'14:00', materia: null, profesor: null},
-  //   {id: 11, fecha:'2023-12-04', turno:'tarde', hora:'14:40', materia: null, profesor: null}
-  // ]
-
   constructor(private reservaService: ReservaService){
 
   }
@@ -47,7 +37,7 @@ export class ViewComponent implements OnInit {
     this.carga();
   }
 
-  vistaTurno(): Reserva[] {
+  vistaTurno(): void {
     this.listaFiltro = [];
     if(this.turno == 'dia') {
       this.listaFiltro = this.listaDia;
@@ -58,16 +48,12 @@ export class ViewComponent implements OnInit {
     if(this.turno == 'noche') {
       this.listaFiltro = this.listaNoche;
     }
-    return this.listaFiltro;
   }
 
   carga(): void {
-    if(1 == 1) {
-      this.vistaTurno();
+    if(1 === 1) {
       this.verFiltro(this.fecha, this.turno);
     }
-    console.log('service' ,this.listaService);
-    console.log('filtro', this.listaFiltro);
     for (const i of this.listaFiltro) {
       for (const j of this.listaService) {
         if(i.hora == j.hora) {
