@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Reserva } from '../models/Reserva';
+import { URL_ENDPOINT } from '../config/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservaService {
-  private urlEndPoint:string = "http://localhost:8084/api"+ '/reserva';
+  private urlEndPoint:string = URL_ENDPOINT + '/reserva';
 
   constructor(private http:HttpClient) { }
 
@@ -29,5 +30,9 @@ export class ReservaService {
 
   delete(id: number):Observable<Reserva> {
     return this.http.delete<Reserva>(this.urlEndPoint + '/' + id);
+  }
+
+  filterDateTurn(f: string, t: string): Observable<Reserva[]> {
+    return this.http.get<Reserva[]>(this.urlEndPoint + '-ft/' + f + '/' + t);
   }
 }

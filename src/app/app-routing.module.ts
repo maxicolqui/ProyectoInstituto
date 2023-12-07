@@ -12,7 +12,7 @@ import { ReservasComponent } from './turno/reservas/reservas.component';
 const routes: Routes = [
   {path: "",redirectTo:"home",pathMatch:"full"},
   {path:"home",component:HomeComponent},
-  {path:"software",component:SoftComponent},
+  {path:"carrera/:c",component:SoftComponent},
   {path:"logeo",component:InicioComponent},
   {path:"pagina/:e.dni",component:ReservasComponent},
   {path:"Contacto",component:Module1Component},

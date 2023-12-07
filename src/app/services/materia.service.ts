@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Materia } from '../models/Materia';
+import { URL_ENDPOINT } from '../config/config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MateriaService {
-  private urlEndPoint:string = "http://localhost:8084/api"+'/materia';
+  private urlEndPoint:string = URL_ENDPOINT + '/materia';
 
   constructor(private http:HttpClient) { }
 
@@ -29,5 +30,9 @@ export class MateriaService {
 
   delete(id: number):Observable<Materia> {
     return this.http.delete<Materia>(this.urlEndPoint + '/' + id);
+  }
+
+  viewCarrera(carrera: string):Observable<Materia[]> {
+    return this.http.get<Materia[]>(this.urlEndPoint + '-c/' + carrera)
   }
 }

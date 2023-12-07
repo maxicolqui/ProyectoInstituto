@@ -1,24 +1,33 @@
+<div>
+  <label class="block" for="fecha">Seleccione una fecha</label>
+  <input (change)="cambios()" [(ngModel)]="fecha" id="fecha" type="date" name="fecha">
+</div>
+<div>
+  <label for="turno">Seleccione un turno</label>
+  <select (change)="cambios()" [(ngModel)]="turno" name="turno" id="turno">
+      <option value="dia">mañana</option>
+      <option value="tarde">tarde</option>
+      <option value="noche">noche</option>
+  </select>
+</div>
 <div class="container">
   <div class="row">
     <table class="table">
       <thead>
         <tr class="text-cente ">
-          <th scope="col">Nombre - Apellido</th>
-          <th scope="col">Turno</th>
           <th scope="col">Horario</th>
-          <th scope="col">Fecha</th>
+          <th scope="col">Profesor</th>
           <th scope="col">Materia</th>
         </tr>
       </thead>
       <tbody>
-        <tr class="text-cente " *ngFor="let e of listaReserva">
-          <td>{{e.profesor.nombre}} - {{e.profesor.apellido}}</td>
-          <td>{{e.turno}}</td>
-          <td>{{e.hora}}</td>
-          <td>{{e.fecha}}</td>
-          <td>{{e.materia.nombre}}</td>
+        <tr class="text-cente " *ngFor="let e of listaService">
+          <td>{{ e.hora }}</td>
+          <td>{{ e.profesor.nombre }}</td>
+          <td>{{ e.materia.nombre }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+<button (click)="rese()">g</button>

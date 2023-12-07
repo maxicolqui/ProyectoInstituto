@@ -1,5 +1,10 @@
 export class Materia {
     id:number;
-    nombre:string;
-    carrera:string;
+    numero: number;
+    nombre: string;
+    carrera: string;
+    regimen: string;
+    regularidad: string;
+    aprobada: string;
+    periodo: number; 
 }
