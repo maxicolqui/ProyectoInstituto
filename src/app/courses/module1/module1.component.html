@@ -3,52 +3,52 @@
     <div class="container">
         <h5 class="section-title h1">DEVS KMMI</h5>
         <div class="row">
-            <!-- Team member -->
-            <div class="mainflip" *ngFor="let t of listaMember1">
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="../assets/img/{{t.imagen}}" alt="img"></p>
-                                    <h4 class="card-title">{{t.nombre}}</h4>
-                                    <p class="card-text"> DEV</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center mt-4">
-                                    <h4 class="card-title">Contacto</h4>
-                                    <p class="card-text">{{t.nombreYap}} </p>
-                                    <p class="card-text">{{t.tel}}</p>
-                                    <p class="card-text">{{t.mail}}</p>
-                                    <p class="card-text">{{t.git}} </p>
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="{{t.linkedin}}">
-                                                <i class="bi bi-linkedin"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank" href="{{t.git}}">
-                                                <i class="bi bi-git"></i>
-                                            </a>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <a class="social-icon text-xs-center" target="_blank"
-                                                href="mailto:{{t.mail}} ">
-                                                <i class="bi bi-envelope-plus-fill"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+   <!-- Team member -->
+   <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let t of listaMember1">
+    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+        <div class="mainflip">
+            <div class="frontside">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <p><img class=" img-fluid" src="../assets/img/{{t.imagen}}" alt="img"></p>
+                        <h4 class="card-title">{{t.nombre}}</h4>
+                        <p class="card-text"> DEV</p>
+                    </div>
+                </div>
+            </div>
+            <div class="backside">
+                <div class="card">
+                    <div class="card-body text-center mt-4">
+                        <h2 class="card-title">CONTACTO</h2>
+                        <h3 class="card-text">{{t.nombreYap}} </h3>
+                        <br>
+                        <p class="card-text">{{t.tel}}</p>
+                        <p class="card-text">{{t.mail}}</p>
+                        <p class="card-text">{{t.git}} </p>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a class="social-icon text-xs-center" target="_blank"
+                                    href="{{t.linkedin}}">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="social-icon text-xs-center" target="_blank"
+                                    href="{{t.git}}">
+                                    <i class="bi bi-git"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="social-icon text-xs-center" target="_blank"
+                                    href="mailto:{{t.mail}} ">
+                                    <i class="bi bi-envelope-plus-fill"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+<!-- ./Team member -->        

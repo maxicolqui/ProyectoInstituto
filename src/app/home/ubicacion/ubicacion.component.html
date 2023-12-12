@@ -1,22 +1,24 @@
 <section class="container">
     <section class="w-50 mx-auto text-center pt-5" id="intro">
         <h1 class="p-3 fs-2 border-top border-3 ">Horarios <span class="text-success">Gabinete
-                Informatico</span></h1>
+                Informático</span></h1>
     </section>
     <div class="row">
         <app-view></app-view>
+        <button type="button" class="btn btn-success sm shadow" ><h3><a class="nav-link" href="" [routerLink]="['/logeo']" routerLinkActive="router-link-active">RESERVÁ</a></h3></button>
+
     </div>
 </section>
 
 <section class="container mb-5">
     <section class="w-50 mx-auto text-center pt-5" id="intro">
-        <h1 class="p-3 fs-2 border-top border-3 ">Ubicacion <span class="text-success">Nuevo
+        <h1 class="p-3 fs-2 border-top border-3 ">Ubicación <span class="text-success">Nuevo
                 Horizonte</span></h1>
     </section>
     <div class="row">
         <!-- seccion de colectivo -->
         <div class="col-sm-12 col-md-6 col-lg-6  ">
-            <h1 class="  text-center fs-2 ">Lineas de Transporte </h1>
+            <h1 class="  text-center fs-2 ">Líneas de Transporte </h1>
             <h1 class="fs-3 fw-normal ">El Urbano <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
                     fill="currentColor" class=" urbano bi bi-bus-front-fill" viewBox="0 0 16 16">
                     <path
@@ -37,5 +39,8 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button type="button" class="btn btn-success sm shadow"> <h3> <a class="nav-link active" aria-current="page" href="#">Volver a Inicio</a></h3></button>
+</div>
 </section>
 
