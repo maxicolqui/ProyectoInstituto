@@ -7,7 +7,7 @@ import { Reserva } from '../models/Reserva';
   providedIn: 'root'
 })
 export class ReservaService {
-  private urlEndPoint:string = "http://localhost:8084/api"+ '/reserva';
+  private urlEndPoint:string = "http://localhost:8080/api"+ '/reserva';
 
   constructor(private http:HttpClient) { }
 

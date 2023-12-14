@@ -7,7 +7,7 @@ import { Materia } from '../models/Materia';
   providedIn: 'root'
 })
 export class MateriaService {
-  private urlEndPoint:string = "http://localhost:8084/api"+'/materia';
+  private urlEndPoint:string = "http://localhost:8080/api"+'/materia';
 
   constructor(private http:HttpClient) { }
 
