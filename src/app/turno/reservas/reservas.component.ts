@@ -51,8 +51,7 @@ export class ReservasComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
-
+  
     this.reservaService.viewAll().subscribe(resp => {
       this.listaReserva = resp;
       //console.log(this.listaReserva)

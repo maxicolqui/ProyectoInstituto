@@ -1,22 +1,12 @@
-footer .contenedor{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 25px;
-    
-}
-
-.copy{
-    font-size: 20px;
-}
-
-.sociales{
-    width: 100%;
-    text-align: center;
-    font-size: 28px;
-}
-
-.sociales a{
-    color: #333;
+a{
     text-decoration: none;
+}
+a.ins{
+    color: rgb(221, 22, 62);
+}
+a.you{
+    color: red;
+}
+a.twi{
+    color: rgb(37,211 ,102);
 }

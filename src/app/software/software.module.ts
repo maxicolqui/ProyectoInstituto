@@ -4,6 +4,7 @@ import { SoftComponent } from './soft/soft.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EnfermeriaComponent } from './enfermeria/enfermeria.component';
 
 
 
@@ -11,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     SoftComponent,
     InicioComponent,
+    EnfermeriaComponent,
   ],
   imports: [
     CommonModule,

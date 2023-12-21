@@ -1,27 +1,24 @@
 # ProyectoInstituto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+<h1>Trabajo Final Grupal</h1>
+<h1>Pagina Web de Reserva de turnos para Instituto Nuevo Horizonte <span class="text-success"> de la Provincia de San Salvador de Jujuy</span> Argentina</h1>
+<section class="mt-3 text-center">
+    <h1 class="">Inicio</h1>
+    <img src="./img/home.png" alt="home">
+    <img src="./img/carrera.png" alt="">
+    <img src="./img/ubicacion.png" alt="">
+</section>
 
-## Development server
+<section class="mt-3 text-center">
+    <h1>Logeo</h1>
+    <img src="./img/inicio.png" alt="Logeo">
+    <h1>Reserva de Turno</h1>
+    <img src="./img/reserva.png" alt="Reserva de Turno">
+    <h1>Visualizar los Turnos</h1>
+    <img src="./img/view.png" alt="">
+    <h1>Editar o Eliminar Turnos</h1>
+    <img src="./img/edit.png" alt="">
+</section>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h1 class="text-center">La Pagina tambien es adaptable a diferente tipo de resolucion de pantalla</h1>
